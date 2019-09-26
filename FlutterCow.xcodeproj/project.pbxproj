@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34457CFD233CEFC1008CEBF9 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34457CFC233CEFC1008CEBF9 /* Background.swift */; };
 		349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B0C2338C0CE00065C1B /* AppDelegate.swift */; };
 		349D5B0F2338C0CE00065C1B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B0E2338C0CE00065C1B /* GameScene.sks */; };
 		349D5B112338C0CE00065C1B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B102338C0CE00065C1B /* Actions.sks */; };
@@ -17,6 +18,7 @@
 		349D5B1D2338C0CF00065C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B1B2338C0CF00065C1B /* LaunchScreen.storyboard */; };
 		349D5B282338C0CF00065C1B /* FlutterCowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B272338C0CF00065C1B /* FlutterCowTests.swift */; };
 		349D5B332338C0CF00065C1B /* FlutterCowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B322338C0CF00065C1B /* FlutterCowUITests.swift */; };
+		349D5B432338D14F00065C1B /* Cow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B422338D14F00065C1B /* Cow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34457CFC233CEFC1008CEBF9 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		349D5B092338C0CE00065C1B /* FlutterCow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlutterCow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		349D5B0C2338C0CE00065C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		349D5B0E2338C0CE00065C1B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		349D5B2E2338C0CF00065C1B /* FlutterCowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlutterCowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		349D5B322338C0CF00065C1B /* FlutterCowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterCowUITests.swift; sourceTree = "<group>"; };
 		349D5B342338C0CF00065C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		349D5B422338D14F00065C1B /* Cow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		349D5B0B2338C0CE00065C1B /* FlutterCow */ = {
 			isa = PBXGroup;
 			children = (
+				349D5B412338CF7500065C1B /* GameObjects */,
 				349D5B0C2338C0CE00065C1B /* AppDelegate.swift */,
 				349D5B0E2338C0CE00065C1B /* GameScene.sks */,
 				349D5B102338C0CE00065C1B /* Actions.sks */,
@@ -132,6 +137,15 @@
 				349D5B342338C0CF00065C1B /* Info.plist */,
 			);
 			path = FlutterCowUITests;
+			sourceTree = "<group>";
+		};
+		349D5B412338CF7500065C1B /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				349D5B422338D14F00065C1B /* Cow.swift */,
+				34457CFC233CEFC1008CEBF9 /* Background.swift */,
+			);
+			path = GameObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +282,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				349D5B132338C0CE00065C1B /* GameScene.swift in Sources */,
+				349D5B432338D14F00065C1B /* Cow.swift in Sources */,
 				349D5B152338C0CE00065C1B /* GameViewController.swift in Sources */,
 				349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */,
+				34457CFD233CEFC1008CEBF9 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTUTGY3V82;
 				INFOPLIST_FILE = FlutterCow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -460,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTUTGY3V82;
 				INFOPLIST_FILE = FlutterCow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -478,6 +496,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTUTGY3V82;
 				INFOPLIST_FILE = FlutterCowTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,6 +518,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTUTGY3V82;
 				INFOPLIST_FILE = FlutterCowTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -519,6 +539,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTUTGY3V82;
 				INFOPLIST_FILE = FlutterCowUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,6 +559,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTUTGY3V82;
 				INFOPLIST_FILE = FlutterCowUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
