@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		34457CFD233CEFC1008CEBF9 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34457CFC233CEFC1008CEBF9 /* Background.swift */; };
 		349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B0C2338C0CE00065C1B /* AppDelegate.swift */; };
-		349D5B0F2338C0CE00065C1B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B0E2338C0CE00065C1B /* GameScene.sks */; };
+		349D5B0F2338C0CE00065C1B /* PlayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B0E2338C0CE00065C1B /* PlayScene.sks */; };
 		349D5B112338C0CE00065C1B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B102338C0CE00065C1B /* Actions.sks */; };
-		349D5B132338C0CE00065C1B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B122338C0CE00065C1B /* GameScene.swift */; };
-		349D5B152338C0CE00065C1B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B142338C0CE00065C1B /* GameViewController.swift */; };
+		349D5B132338C0CE00065C1B /* PlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B122338C0CE00065C1B /* PlayScene.swift */; };
+		349D5B152338C0CE00065C1B /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B142338C0CE00065C1B /* PlayViewController.swift */; };
 		349D5B182338C0CE00065C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B162338C0CE00065C1B /* Main.storyboard */; };
 		349D5B1A2338C0CF00065C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B192338C0CF00065C1B /* Assets.xcassets */; };
 		349D5B1D2338C0CF00065C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B1B2338C0CF00065C1B /* LaunchScreen.storyboard */; };
@@ -42,10 +42,10 @@
 		34457CFC233CEFC1008CEBF9 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		349D5B092338C0CE00065C1B /* FlutterCow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlutterCow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		349D5B0C2338C0CE00065C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		349D5B0E2338C0CE00065C1B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		349D5B0E2338C0CE00065C1B /* PlayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlayScene.sks; sourceTree = "<group>"; };
 		349D5B102338C0CE00065C1B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		349D5B122338C0CE00065C1B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		349D5B142338C0CE00065C1B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		349D5B122338C0CE00065C1B /* PlayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayScene.swift; sourceTree = "<group>"; };
+		349D5B142338C0CE00065C1B /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		349D5B172338C0CE00065C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		349D5B192338C0CF00065C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		349D5B1C2338C0CF00065C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,6 +84,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3332751C233DFC3A00982A89 /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				349D5B122338C0CE00065C1B /* PlayScene.swift */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
+		3332751D233DFC6500982A89 /* GameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				349D5B142338C0CE00065C1B /* PlayViewController.swift */,
+			);
+			path = GameViewController;
+			sourceTree = "<group>";
+		};
 		349D5B002338C0CE00065C1B = {
 			isa = PBXGroup;
 			children = (
@@ -107,12 +123,12 @@
 		349D5B0B2338C0CE00065C1B /* FlutterCow */ = {
 			isa = PBXGroup;
 			children = (
+				3332751D233DFC6500982A89 /* GameViewController */,
+				3332751C233DFC3A00982A89 /* GameScene */,
 				349D5B412338CF7500065C1B /* GameObjects */,
 				349D5B0C2338C0CE00065C1B /* AppDelegate.swift */,
-				349D5B0E2338C0CE00065C1B /* GameScene.sks */,
+				349D5B0E2338C0CE00065C1B /* PlayScene.sks */,
 				349D5B102338C0CE00065C1B /* Actions.sks */,
-				349D5B122338C0CE00065C1B /* GameScene.swift */,
-				349D5B142338C0CE00065C1B /* GameViewController.swift */,
 				349D5B162338C0CE00065C1B /* Main.storyboard */,
 				349D5B192338C0CF00065C1B /* Assets.xcassets */,
 				349D5B1B2338C0CF00065C1B /* LaunchScreen.storyboard */,
@@ -253,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				349D5B182338C0CE00065C1B /* Main.storyboard in Resources */,
-				349D5B0F2338C0CE00065C1B /* GameScene.sks in Resources */,
+				349D5B0F2338C0CE00065C1B /* PlayScene.sks in Resources */,
 				349D5B1A2338C0CF00065C1B /* Assets.xcassets in Resources */,
 				349D5B1D2338C0CF00065C1B /* LaunchScreen.storyboard in Resources */,
 				349D5B112338C0CE00065C1B /* Actions.sks in Resources */,
@@ -281,9 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				349D5B132338C0CE00065C1B /* GameScene.swift in Sources */,
+				349D5B132338C0CE00065C1B /* PlayScene.swift in Sources */,
 				349D5B432338D14F00065C1B /* Cow.swift in Sources */,
-				349D5B152338C0CE00065C1B /* GameViewController.swift in Sources */,
+				349D5B152338C0CE00065C1B /* PlayViewController.swift in Sources */,
 				349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */,
 				34457CFD233CEFC1008CEBF9 /* Background.swift in Sources */,
 			);

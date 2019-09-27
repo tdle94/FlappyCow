@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class PlayScene: SKScene {
     var cow: Cow = Cow()
     
     var backgrounds: [Background] = []
@@ -17,6 +17,7 @@ class GameScene: SKScene {
     var newBackgroundNeeded: Bool = true
 
     override func didMove(to view: SKView) {
+      print("lsjflkdsjlfdjsl")
         addChild(cow)
         backgrounds.append(Background(size: frame.size))
         addChild(backgrounds.first!)
