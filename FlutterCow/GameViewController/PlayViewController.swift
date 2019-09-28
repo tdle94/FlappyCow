@@ -18,14 +18,13 @@ class PlayViewController: UIViewController {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "PlayScene") {
-              print("lsdfjkdjfl")
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
                 // Present the scene
                 view.presentScene(scene)
             }
-            
+            view.showsNodeCount = true
+            view.showsFPS = true
             view.ignoresSiblingOrder = true
         }
     }

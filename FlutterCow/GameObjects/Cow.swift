@@ -10,6 +10,14 @@ import Foundation
 import SpriteKit
 
 class Cow: SKSpriteNode {
+    
+    var isDead: Bool = false {
+        didSet {
+            if isDead {
+                die()
+            }
+        }
+    }
 
     var fallTextures: [SKTexture] {
         let cowAnimatedAtlas = SKTextureAtlas(named: "Cow Sprites")
@@ -34,12 +42,24 @@ class Cow: SKSpriteNode {
 
         return textures
     }
+    
+    var dieTextures: [SKTexture] {
+        let cowAnimatedAtlas = SKTextureAtlas(named: "Cow Sprites")
+        var textures: [SKTexture] = []
+
+        for i in 24...31 {
+            let cowTextureName = "cow\(i)"
+            textures.append(cowAnimatedAtlas.textureNamed(cowTextureName))
+        }
+
+        return textures
+    }
 
     init() {
         super.init(texture: nil, color: .clear, size: .zero)
         texture = fallTextures[0]
         size = fallTextures[0].size()
-        physicsBody = SKPhysicsBody(rectangleOf: size)
+        physicsBody = SKPhysicsBody(circleOfRadius: size.width/3, center: CGPoint(x: frame.size.width/2, y: frame.size.height/2))
         physicsBody?.affectedByGravity = false
         physicsBody?.friction = 10
         physicsBody?.linearDamping = 10
@@ -68,5 +88,15 @@ class Cow: SKSpriteNode {
 
         run(flyupAction)
         run(flyupAnimation)
+    }
+    
+    private func die() {
+        let dieAnimation = SKAction.animate(with: dieTextures, timePerFrame: 0.07, resize: false, restore: true)
+        let dieAction = SKAction.moveBy(x: 5, y: -20, duration: 0.07)
+        dieAction.timingMode = .easeOut
+        dieAnimation.timingMode = .easeOut
+        removeAllActions()
+        run(SKAction.repeatForever(dieAnimation))
+        run(SKAction.repeatForever(dieAction))
     }
 }

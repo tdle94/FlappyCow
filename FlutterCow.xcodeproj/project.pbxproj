@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34227F53233EFB490053E91F /* Spider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F52233EFB490053E91F /* Spider.swift */; };
+		34227F56233F49930053E91F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F55233F49930053E91F /* Extension.swift */; };
+		34227F58233F806B0053E91F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F57233F806B0053E91F /* Log.swift */; };
 		34457CFD233CEFC1008CEBF9 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34457CFC233CEFC1008CEBF9 /* Background.swift */; };
 		349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B0C2338C0CE00065C1B /* AppDelegate.swift */; };
 		349D5B0F2338C0CE00065C1B /* PlayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B0E2338C0CE00065C1B /* PlayScene.sks */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34227F52233EFB490053E91F /* Spider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spider.swift; sourceTree = "<group>"; };
+		34227F55233F49930053E91F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		34227F57233F806B0053E91F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		34457CFC233CEFC1008CEBF9 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		349D5B092338C0CE00065C1B /* FlutterCow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlutterCow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		349D5B0C2338C0CE00065C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +106,14 @@
 			path = GameViewController;
 			sourceTree = "<group>";
 		};
+		34227F54233F497B0053E91F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				34227F55233F49930053E91F /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		349D5B002338C0CE00065C1B = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +137,7 @@
 		349D5B0B2338C0CE00065C1B /* FlutterCow */ = {
 			isa = PBXGroup;
 			children = (
+				34227F54233F497B0053E91F /* Extension */,
 				3332751D233DFC6500982A89 /* GameViewController */,
 				3332751C233DFC3A00982A89 /* GameScene */,
 				349D5B412338CF7500065C1B /* GameObjects */,
@@ -160,6 +175,8 @@
 			children = (
 				349D5B422338D14F00065C1B /* Cow.swift */,
 				34457CFC233CEFC1008CEBF9 /* Background.swift */,
+				34227F52233EFB490053E91F /* Spider.swift */,
+				34227F57233F806B0053E91F /* Log.swift */,
 			);
 			path = GameObjects;
 			sourceTree = "<group>";
@@ -299,8 +316,11 @@
 			files = (
 				349D5B132338C0CE00065C1B /* PlayScene.swift in Sources */,
 				349D5B432338D14F00065C1B /* Cow.swift in Sources */,
+				34227F56233F49930053E91F /* Extension.swift in Sources */,
+				34227F53233EFB490053E91F /* Spider.swift in Sources */,
 				349D5B152338C0CE00065C1B /* PlayViewController.swift in Sources */,
 				349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */,
+				34227F58233F806B0053E91F /* Log.swift in Sources */,
 				34457CFD233CEFC1008CEBF9 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
