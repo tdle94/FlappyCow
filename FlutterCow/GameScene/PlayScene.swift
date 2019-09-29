@@ -9,12 +9,32 @@
 import SpriteKit
 import GameplayKit
 
+struct Random {
+    static var spiderX: CGFloat {
+        return CGFloat.random(in: 0...UIScreen.main.bounds.maxX)
+    }
+    static var spiderY: CGFloat {
+        return CGFloat.random(in: 0...UIScreen.main.bounds.maxY)
+    }
+    static var logX: CGFloat {
+        return CGFloat.random(in: 0...UIScreen.main.bounds.maxX)
+    }
+    static var logY: CGFloat {
+        return CGFloat.random(in: UIScreen.main.bounds.midY...UIScreen.main.bounds.maxY)
+    }
+    static var logHeight: CGFloat = UIScreen.main.bounds.height
+}
+
 class PlayScene: SKScene {
     var cow: Cow = Cow()
 
     var spider0: Spider!
 
     var spider1: Spider!
+    
+    var spider2: Spider!
+    
+    var spider3: Spider!
 
     var backgrounds: [Background] = []
     
@@ -22,34 +42,17 @@ class PlayScene: SKScene {
 
     var newBackgroundNeeded: Bool = true
 
-    var randomY: CGFloat {
-        return CGFloat.random(in: 0...frame.maxY*1.5)
-    }
-    
-    var randomX: CGFloat {
-        return CGFloat.random(in: 0...frame.maxX-100)
-    }
-    
-    var logRandomX: CGFloat {
-        return CGFloat.random(in: frame.maxX...frame.maxX*2)
-    }
-    
-    var logRandomHeight: CGFloat {
-        return CGFloat.random(in: 0...frame.height)
-    }
-
     override func didMove(to view: SKView) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            log = Log(positionX: logRandomX, randomHeight: logRandomHeight)
-        } else {
-            log = Log(positionX: logRandomX, randomHeight: logRandomHeight)
-        }
-
-        spider0 = Spider(position: CGPoint(x: randomX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -randomY))
-        spider1 = Spider(position: CGPoint(x: randomX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -randomY))
+        log = Log(position: CGPoint(x: Random.logX, y: -Random.logY), randomHeight: Random.logHeight)
+        spider0 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
+        spider1 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
+        spider2 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
+        spider3 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
         addChild(cow)
         addChild(spider0)
         addChild(spider1)
+        addChild(spider2)
+        addChild(spider3)
         addChild(log)
         backgrounds.append(Background(size: frame.size))
         addChild(backgrounds.first!)
@@ -63,6 +66,7 @@ class PlayScene: SKScene {
         guard let leadingBackground = backgrounds.first else { return }
 
         // move background indefinitely
+
         if leadingBackground.frame.maxX <= (frame.maxX + frame.width/2) && newBackgroundNeeded {
             let newBackground = Background(size: frame.size)
             newBackground.position.x = leadingBackground.frame.maxX + frame.width/2.06
@@ -76,39 +80,68 @@ class PlayScene: SKScene {
         }
         
         // remove log if out of frame and add back to screen with new position
+
         if log.position.x <= -frame.width/2 {
             log.removeFromParent()
-            log = Log(positionX: logRandomX, randomHeight: logRandomHeight)
+            log = Log(position: CGPoint(x: Random.logX, y: -Random.logY), randomHeight: Random.logHeight)
             addChild(log)
         }
 
         // check for player collision
-        
+
         /** collision top screen,  with spider or with log */
-        if cow.position.y >= frame.maxY || cow.physicsBody?.allContactedBodies().count ?? 0 > 0 && !cow.isDead  {
+        if (cow.position.y >= frame.maxY || cow.physicsBody?.allContactedBodies().count ?? 0 > 0) && !cow.isDead  {
             cow.isDead = true
             spider0.removeAllActions()
             spider1.removeAllActions()
+            spider2.removeAllActions()
+            spider3.removeAllActions()
             log.removeAllActions()
             for background in backgrounds {
                 background.removeAllActions()
             }
             isUserInteractionEnabled = false
         }
+        
+        /** collision bottom */
+        if cow.position.y <= frame.minY+cow.size.height {
+            cow.removeAllActions()
+            spider0.removeAllActions()
+            spider1.removeAllActions()
+            spider2.removeAllActions()
+            spider3.removeAllActions()
+            log.removeAllActions()
+            for background in backgrounds {
+                background.removeAllActions()
+            }
+        }
 
 
         // remove spider if out of frame and add back to screen with new position
+
         if spider0.position.x <= -frame.width/2 {
             spider0.removeFromParent()
             spider0.web.removeFromParent()
-            spider0 = Spider(position: CGPoint(x: randomX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -randomY))
+            spider0 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
             addChild(spider0)
         }
 
         if spider1.position.x <= -frame.width/2 {
             spider1.removeFromParent()
-            spider1 = Spider(position: CGPoint(x: randomX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -randomY))
+            spider1 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
             addChild(spider1)
+        }
+        
+        if spider2.position.x <= -frame.width/2 {
+            spider2.removeFromParent()
+            spider2 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
+            addChild(spider2)
+        }
+
+        if spider3.position.x <= -frame.width/2 {
+            spider3.removeFromParent()
+            spider3 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
+            addChild(spider3)
         }
     }
 }

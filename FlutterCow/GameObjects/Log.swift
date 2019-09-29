@@ -19,23 +19,23 @@ class Log: SKSpriteNode {
         return SKTexture(image: resize)
     }
 
-    init(positionX: CGFloat, randomHeight: CGFloat) {
+    init(position: CGPoint, randomHeight: CGFloat) {
         self.randomHeight = randomHeight
         super.init(texture: nil, color: .white, size: .zero)
-        super.position = CGPoint(x: positionX, y: -UIScreen.main.bounds.height/2)
+        super.position = CGPoint(x: position.x, y: -UIScreen.main.bounds.maxY)
         super.texture = logTexture
         super.size = logTexture.size()
 
-        physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width/4, height: size.height*1.06))
+        physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width, height: randomHeight + 80), center: CGPoint(x: 50, y: 0))
         physicsBody?.affectedByGravity = false
-        physicsBody?.isDynamic = false
-
-        texture = logTexture
-        size = logTexture.size()
+        physicsBody?.mass = 500
+        physicsBody?.friction = 10
+        physicsBody?.isDynamic = true
 
         zPosition = 2
 
         run(SKAction.repeatForever(SKAction.moveBy(x: -5, y: 0, duration: 0.07)))
+        run(SKAction.moveTo(y: position.y, duration: 2))
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -10,6 +10,7 @@
 		34227F53233EFB490053E91F /* Spider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F52233EFB490053E91F /* Spider.swift */; };
 		34227F56233F49930053E91F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F55233F49930053E91F /* Extension.swift */; };
 		34227F58233F806B0053E91F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F57233F806B0053E91F /* Log.swift */; };
+		343C219023408ED100B372F0 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343C218F23408ED100B372F0 /* Coin.swift */; };
 		34457CFD233CEFC1008CEBF9 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34457CFC233CEFC1008CEBF9 /* Background.swift */; };
 		349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B0C2338C0CE00065C1B /* AppDelegate.swift */; };
 		349D5B0F2338C0CE00065C1B /* PlayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B0E2338C0CE00065C1B /* PlayScene.sks */; };
@@ -45,6 +46,7 @@
 		34227F52233EFB490053E91F /* Spider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spider.swift; sourceTree = "<group>"; };
 		34227F55233F49930053E91F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		34227F57233F806B0053E91F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		343C218F23408ED100B372F0 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		34457CFC233CEFC1008CEBF9 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		349D5B092338C0CE00065C1B /* FlutterCow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlutterCow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		349D5B0C2338C0CE00065C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,9 +179,11 @@
 				34457CFC233CEFC1008CEBF9 /* Background.swift */,
 				34227F52233EFB490053E91F /* Spider.swift */,
 				34227F57233F806B0053E91F /* Log.swift */,
+				343C218F23408ED100B372F0 /* Coin.swift */,
 			);
 			path = GameObjects;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 /* End PBXGroup section */
 
@@ -314,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				343C219023408ED100B372F0 /* Coin.swift in Sources */,
 				349D5B132338C0CE00065C1B /* PlayScene.swift in Sources */,
 				349D5B432338D14F00065C1B /* Cow.swift in Sources */,
 				34227F56233F49930053E91F /* Extension.swift in Sources */,
