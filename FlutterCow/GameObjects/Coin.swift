@@ -25,7 +25,15 @@ class Coin: SKSpriteNode {
     init(position: CGPoint) {
         super.init(texture: nil, color: .white, size: .zero)
         texture = coinTextures[0]
-        
+        let wait = SKAction.wait(forDuration: 3, withRange: 2)
+        let fallAction = SKAction.moveBy(x: -20, y: -10, duration: 0.07)
+        let fallAnimation = SKAction.animate(with: coinTextures, timePerFrame: 0.07)
+      
+        run(SKAction.sequence([
+          wait,
+          fallAction,
+          fallAnimation
+        ]))
     }
     
     required init?(coder aDecoder: NSCoder) {

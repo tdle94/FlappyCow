@@ -40,6 +40,8 @@ class PlayScene: SKScene {
     
     var log: Log!
 
+    var coin: Coin!
+
     var newBackgroundNeeded: Bool = true
 
     override func didMove(to view: SKView) {
