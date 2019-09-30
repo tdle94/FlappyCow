@@ -31,6 +31,7 @@ class Spider: SKSpriteNode {
 
         physicsBody = SKPhysicsBody(circleOfRadius: size.width/3, center: CGPoint(x: size.width/2, y: size.height/2))
         physicsBody?.affectedByGravity = false
+        physicsBody?.mass = 10
 
         zPosition = 2
 

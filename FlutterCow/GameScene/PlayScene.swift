@@ -22,6 +22,9 @@ struct Random {
     static var logY: CGFloat {
         return CGFloat.random(in: UIScreen.main.bounds.midY...UIScreen.main.bounds.maxY)
     }
+    static var coinX: CGFloat {
+        return CGFloat.random(in: UIScreen.main.bounds.midX...UIScreen.main.bounds.maxX)
+    }
     static var logHeight: CGFloat = UIScreen.main.bounds.height
 }
 
@@ -35,6 +38,8 @@ class PlayScene: SKScene {
     var spider2: Spider!
     
     var spider3: Spider!
+    
+    var coin: Coin!
 
     var backgrounds: [Background] = []
     
@@ -43,6 +48,7 @@ class PlayScene: SKScene {
     var newBackgroundNeeded: Bool = true
 
     override func didMove(to view: SKView) {
+        // coin = Coin(position: CGPoint(x: 0, y: UIScreen.main.bounds.height/2)) TODO
         log = Log(position: CGPoint(x: Random.logX, y: -Random.logY), randomHeight: Random.logHeight)
         spider0 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
         spider1 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))

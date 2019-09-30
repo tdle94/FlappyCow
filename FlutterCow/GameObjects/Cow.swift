@@ -63,7 +63,7 @@ class Cow: SKSpriteNode {
         physicsBody?.affectedByGravity = false
         physicsBody?.friction = 10
         physicsBody?.linearDamping = 10
-        physicsBody?.mass = 10
+        physicsBody?.mass = 100
         physicsBody?.isDynamic = true
         position.x = -frame.width*2
         zPosition = 2

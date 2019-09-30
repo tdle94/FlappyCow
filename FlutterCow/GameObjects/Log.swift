@@ -22,13 +22,13 @@ class Log: SKSpriteNode {
     init(position: CGPoint, randomHeight: CGFloat) {
         self.randomHeight = randomHeight
         super.init(texture: nil, color: .white, size: .zero)
-        super.position = CGPoint(x: position.x, y: -UIScreen.main.bounds.maxY)
+        super.position = CGPoint(x: position.x, y: -UIScreen.main.bounds.height*2)
         super.texture = logTexture
         super.size = logTexture.size()
 
         physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width, height: randomHeight + 80), center: CGPoint(x: 50, y: 0))
         physicsBody?.affectedByGravity = false
-        physicsBody?.mass = 500
+        physicsBody?.mass = 1000
         physicsBody?.friction = 10
         physicsBody?.isDynamic = true
 
