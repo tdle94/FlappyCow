@@ -11,7 +11,7 @@ import GameplayKit
 
 struct Random {
     static var spiderX: CGFloat {
-        return CGFloat.random(in: 0...UIScreen.main.bounds.maxX)
+        return CGFloat.random(in: -UIScreen.main.bounds.width/2...UIScreen.main.bounds.maxX)
     }
     static var spiderY: CGFloat {
         return CGFloat.random(in: 0...UIScreen.main.bounds.maxY)
@@ -23,7 +23,7 @@ struct Random {
         return CGFloat.random(in: UIScreen.main.bounds.midY...UIScreen.main.bounds.maxY)
     }
     static var coinX: CGFloat {
-        return CGFloat.random(in: UIScreen.main.bounds.midX...UIScreen.main.bounds.maxX)
+        return CGFloat.random(in: 0...UIScreen.main.bounds.maxX)
     }
     static var logHeight: CGFloat = UIScreen.main.bounds.height
 }
@@ -38,8 +38,6 @@ class PlayScene: SKScene {
     var spider2: Spider!
     
     var spider3: Spider!
-    
-    var coin: Coin!
 
     var backgrounds: [Background] = []
     
@@ -48,7 +46,6 @@ class PlayScene: SKScene {
     var newBackgroundNeeded: Bool = true
 
     override func didMove(to view: SKView) {
-        // coin = Coin(position: CGPoint(x: 0, y: UIScreen.main.bounds.height/2)) TODO
         log = Log(position: CGPoint(x: Random.logX, y: -Random.logY), randomHeight: Random.logHeight)
         spider0 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
         spider1 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
@@ -60,6 +57,7 @@ class PlayScene: SKScene {
         addChild(spider2)
         addChild(spider3)
         addChild(log)
+        addChild(Coin(position: CGPoint(x: 0, y: frame.height/2)))
         backgrounds.append(Background(size: frame.size))
         addChild(backgrounds.first!)
     }
@@ -96,17 +94,24 @@ class PlayScene: SKScene {
         // check for player collision
 
         /** collision top screen,  with spider or with log */
+
         if (cow.position.y >= frame.maxY || cow.physicsBody?.allContactedBodies().count ?? 0 > 0) && !cow.isDead  {
-            cow.isDead = true
-            spider0.removeAllActions()
-            spider1.removeAllActions()
-            spider2.removeAllActions()
-            spider3.removeAllActions()
-            log.removeAllActions()
-            for background in backgrounds {
-                background.removeAllActions()
+            if let contactedBody = cow.physicsBody?.allContactedBodies().first {
+                if contactedBody.contactTestBitMask == 0 {
+                    cow.isDead = true
+                    spider0.removeAllActions()
+                    spider1.removeAllActions()
+                    spider2.removeAllActions()
+                    spider3.removeAllActions()
+                    log.removeAllActions()
+                    for background in backgrounds {
+                        if background.hasActions() {
+                            background.removeAllActions()
+                        }
+                    }
+                    isUserInteractionEnabled = false
+                }
             }
-            isUserInteractionEnabled = false
         }
         
         /** collision bottom */
@@ -119,6 +124,17 @@ class PlayScene: SKScene {
             log.removeAllActions()
             for background in backgrounds {
                 background.removeAllActions()
+            }
+        }
+        
+        // remove coin if out of frame
+        for node in children {
+            if let coin = node as? Coin {
+                if coin.position.x <= -frame.width/2 || coin.position.y >= frame.height/2 {
+                    coin.removeAllActions()
+                    coin.removeFromParent()
+                    addChild(Coin(position: CGPoint(x: 0, y: 0)))
+                }
             }
         }
 

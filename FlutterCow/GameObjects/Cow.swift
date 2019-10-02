@@ -65,6 +65,8 @@ class Cow: SKSpriteNode {
         physicsBody?.linearDamping = 10
         physicsBody?.mass = 100
         physicsBody?.isDynamic = true
+        physicsBody?.contactTestBitMask = 0
+        physicsBody?.categoryBitMask = 1
         position.x = -frame.width*2
         zPosition = 2
 

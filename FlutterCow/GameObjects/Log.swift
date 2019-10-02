@@ -31,6 +31,7 @@ class Log: SKSpriteNode {
         physicsBody?.mass = 1000
         physicsBody?.friction = 10
         physicsBody?.isDynamic = true
+        physicsBody?.contactTestBitMask = 0
 
         zPosition = 2
 

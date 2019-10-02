@@ -11,13 +11,12 @@ import SpriteKit
 
 class Coin: SKSpriteNode {
     var coinTextures: [SKTexture] {
+        let goldAnimatedAtlas = SKTextureAtlas(named: "Cow Sprites")
         var textures: [SKTexture] = []
 
         for i in 1...30 {
-            let coinTextureName = "Gold_\(i)"
-            let image = UIImage(named: coinTextureName)!
-            let resize = image.resizeCoin(newSize: CGSize(width: 50, height: 50))
-            textures.append(SKTexture(image: resize))
+            let goldTextureName = "Gold_\(i)"
+            textures.append(goldAnimatedAtlas.textureNamed(goldTextureName))
         }
 
         return textures
@@ -27,19 +26,19 @@ class Coin: SKSpriteNode {
         super.init(texture: nil, color: .white, size: .zero)
         super.position = position
         texture = coinTextures[0]
+
         size = coinTextures[0].size()
-        physicsBody = SKPhysicsBody(circleOfRadius: size.width/2, center: CGPoint(x: size.width/2, y: size.height/2))
+        physicsBody = SKPhysicsBody(circleOfRadius: size.width/3, center: CGPoint(x: size.width/2, y: size.height/2))
         physicsBody?.affectedByGravity = false
-        physicsBody?.friction = 1
-        physicsBody?.mass = 5
+        physicsBody?.contactTestBitMask = 1
 
         zPosition = 2
 
         let rotatingAnimation = SKAction.animate(with: coinTextures, timePerFrame: 0.07, resize: false, restore: true)
         let rotatingAction = SKAction.moveBy(x: -20, y: -20, duration: 1)
 
-        run(SKAction.repeatForever(rotatingAnimation))
         run(SKAction.repeatForever(rotatingAction))
+        run(SKAction.repeatForever(rotatingAnimation))
     }
     
     required init?(coder aDecoder: NSCoder) {
