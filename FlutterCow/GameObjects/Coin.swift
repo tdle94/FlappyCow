@@ -11,11 +11,11 @@ import SpriteKit
 
 class Coin: SKSpriteNode {
     var coinTextures: [SKTexture] {
-        let goldAnimatedAtlas = SKTextureAtlas(named: "Cow Sprites")
+        let goldAnimatedAtlas = SKTextureAtlas(named: "Gold")
         var textures: [SKTexture] = []
 
-        for i in 1...30 {
-            let goldTextureName = "Gold_\(i)"
+        for i in 1...6 {
+            let goldTextureName = "gold_coin_hexagon_\(i)"
             textures.append(goldAnimatedAtlas.textureNamed(goldTextureName))
         }
 
@@ -35,7 +35,7 @@ class Coin: SKSpriteNode {
         zPosition = 2
 
         let rotatingAnimation = SKAction.animate(with: coinTextures, timePerFrame: 0.07, resize: false, restore: true)
-        let rotatingAction = SKAction.moveBy(x: -20, y: -20, duration: 1)
+        let rotatingAction = SKAction.moveBy(x: -20, y: -50, duration: 1)
 
         run(SKAction.repeatForever(rotatingAction))
         run(SKAction.repeatForever(rotatingAnimation))

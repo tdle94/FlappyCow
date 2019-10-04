@@ -11,7 +11,7 @@ import GameplayKit
 
 struct Random {
     static var spiderX: CGFloat {
-        return CGFloat.random(in: -UIScreen.main.bounds.width/2...UIScreen.main.bounds.maxX)
+        return CGFloat.random(in: -UIScreen.main.bounds.width/4...UIScreen.main.bounds.maxX)
     }
     static var spiderY: CGFloat {
         return CGFloat.random(in: 0...UIScreen.main.bounds.maxY)
@@ -126,14 +126,14 @@ class PlayScene: SKScene {
                 background.removeAllActions()
             }
         }
-        
+  
         // remove coin if out of frame
         for node in children {
             if let coin = node as? Coin {
-                if coin.position.x <= -frame.width/2 || coin.position.y >= frame.height/2 {
+                if coin.position.x <= -frame.width/2 || coin.position.y >= -frame.height/2 {
                     coin.removeAllActions()
                     coin.removeFromParent()
-                    addChild(Coin(position: CGPoint(x: 0, y: 0)))
+                    addChild(Coin(position: CGPoint(x: 0, y: frame.height/2)))
                 }
             }
         }
