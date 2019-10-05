@@ -35,7 +35,7 @@ class Coin: SKSpriteNode {
         zPosition = 2
 
         let rotatingAnimation = SKAction.animate(with: coinTextures, timePerFrame: 0.07, resize: false, restore: true)
-        let rotatingAction = SKAction.moveBy(x: -20, y: -50, duration: 1)
+        let rotatingAction = SKAction.moveBy(x: -10, y: -50, duration: 1)
 
         run(SKAction.repeatForever(rotatingAction))
         run(SKAction.repeatForever(rotatingAnimation))
