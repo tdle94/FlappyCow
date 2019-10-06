@@ -14,17 +14,20 @@ class PlayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "PlayScene") {
-                // Set the scale mode to scale to fit the window
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(startGame),
+                                                   name: NSNotification.Name("start game"),
+                                                   object: nil)
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(gameOver),
+                                                   name: NSNotification.Name("game over"),
+                                                   object: nil)
+
+            if let scene = SKScene(fileNamed: "SplashScene") {
                 scene.scaleMode = .aspectFill
-                // Present the scene
                 view.presentScene(scene)
             }
-            view.showsNodeCount = true
-            view.showsFPS = true
             view.ignoresSiblingOrder = true
         }
     }
@@ -43,5 +46,17 @@ class PlayViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+
+    @objc func startGame() {
+        guard let view = self.view as? SKView, let scene = SKScene(fileNamed: "PlayScene") else { return }
+        scene.scaleMode = .fill
+        view.presentScene(scene, transition: SKTransition.doorsCloseHorizontal(withDuration: 1))
+    }
+    
+    @objc func gameOver() {
+        guard let view = self.view as? SKView, let scene = SKScene(fileNamed: "SplashScene") else { return }
+        scene.scaleMode = .fill
+        view.presentScene(scene, transition: SKTransition.doorsCloseHorizontal(withDuration: 1))
     }
 }

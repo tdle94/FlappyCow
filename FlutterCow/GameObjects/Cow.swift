@@ -83,7 +83,7 @@ class Cow: SKSpriteNode {
     }
 
     func moveUp() {
-        let flyupAction = SKAction.moveBy(x: 0, y: 80, duration: 0.07)
+        let flyupAction = SKAction.moveBy(x: 0, y: 75, duration: 0.07)
         let flyupAnimation = SKAction.animate(with: flyTextures, timePerFrame: 0.07)
         flyupAnimation.timingMode = .easeOut
         flyupAction.timingMode = .easeOut

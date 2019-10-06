@@ -10,22 +10,24 @@ import SpriteKit
 import GameplayKit
 
 struct Random {
+    private static var bounds = UIScreen.main.bounds
+
     static var spiderX: CGFloat {
-        return CGFloat.random(in: -UIScreen.main.bounds.width/3...UIScreen.main.bounds.maxX)
+        return CGFloat.random(in: -bounds.width/3...bounds.maxX + bounds.width/2)
     }
     static var spiderY: CGFloat {
-        return CGFloat.random(in: 0...UIScreen.main.bounds.maxY)
+        return CGFloat.random(in: 0...bounds.maxY)
     }
     static var logX: CGFloat {
-        return CGFloat.random(in: 0...UIScreen.main.bounds.maxX)
+        return CGFloat.random(in: 0...bounds.maxX)
     }
     static var logY: CGFloat {
-        return CGFloat.random(in: UIScreen.main.bounds.midY...UIScreen.main.bounds.maxY)
+        return CGFloat.random(in: bounds.midY...bounds.maxY)
     }
     static var coinX: CGFloat {
-        return CGFloat.random(in: -UIScreen.main.bounds.width/2...0)
+        return CGFloat.random(in: -bounds.width/2...0)
     }
-    static var logHeight: CGFloat = UIScreen.main.bounds.height
+    static var logHeight: CGFloat = bounds.height
 }
 
 class PlayScene: SKScene {
@@ -48,6 +50,7 @@ class PlayScene: SKScene {
     var newBackgroundNeeded: Bool = true
 
     override func didMove(to view: SKView) {
+        super.didMove(to: view)
         coin = Coin(position: CGPoint(x: Random.coinX, y: frame.height/2))
         log = Log(position: CGPoint(x: Random.logX, y: -Random.logY), randomHeight: Random.logHeight)
         spider0 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
@@ -106,6 +109,7 @@ class PlayScene: SKScene {
                     spider1.removeAllActions()
                     spider2.removeAllActions()
                     spider3.removeAllActions()
+                    coin.removeAllActions()
                     log.removeAllActions()
                     for background in backgrounds {
                         if background.hasActions() {
@@ -124,15 +128,11 @@ class PlayScene: SKScene {
         
         /** collision bottom */
         if cow.position.y <= frame.minY+cow.size.height {
-            cow.removeAllActions()
-            spider0.removeAllActions()
-            spider1.removeAllActions()
-            spider2.removeAllActions()
-            spider3.removeAllActions()
-            log.removeAllActions()
+            deAlloc()
             for background in backgrounds {
                 background.removeAllActions()
             }
+            NotificationCenter.default.post(name: NSNotification.Name("game over"), object: nil)
         }
   
         // remove coin if out of frame
@@ -168,6 +168,13 @@ class PlayScene: SKScene {
             spider3.removeFromParent()
             spider3 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
             addChild(spider3)
+        }
+    }
+    
+    func deAlloc() {
+        for children in children {
+            children.removeAllActions()
+            children.removeFromParent()
         }
     }
 }

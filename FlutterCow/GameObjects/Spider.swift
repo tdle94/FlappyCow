@@ -37,7 +37,7 @@ class Spider: SKSpriteNode {
         zPosition = 2
 
         addChild(web)
-        run(SKAction.moveBy(x: 0, y: randomDrop.y, duration: 2))
+        run(SKAction.moveBy(x: 0, y: randomDrop.y, duration: 2.5))
         run(SKAction.repeatForever(SKAction.moveBy(x: -5, y: 0, duration: 0.07)))
     }
 

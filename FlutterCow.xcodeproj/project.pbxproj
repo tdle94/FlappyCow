@@ -23,6 +23,9 @@
 		349D5B282338C0CF00065C1B /* FlutterCowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B272338C0CF00065C1B /* FlutterCowTests.swift */; };
 		349D5B332338C0CF00065C1B /* FlutterCowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B322338C0CF00065C1B /* FlutterCowUITests.swift */; };
 		349D5B432338D14F00065C1B /* Cow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B422338D14F00065C1B /* Cow.swift */; };
+		34DB1D25234997C200CE17D4 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB1D24234997C200CE17D4 /* SplashScene.swift */; };
+		34DB1D272349A2B800CE17D4 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB1D262349A2B800CE17D4 /* PlayButton.swift */; };
+		34DB1D292349C88200CE17D4 /* SplashScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 34DB1D282349C88200CE17D4 /* SplashScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		349D5B322338C0CF00065C1B /* FlutterCowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterCowUITests.swift; sourceTree = "<group>"; };
 		349D5B342338C0CF00065C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		349D5B422338D14F00065C1B /* Cow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cow.swift; sourceTree = "<group>"; };
+		34DB1D24234997C200CE17D4 /* SplashScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
+		34DB1D262349A2B800CE17D4 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		34DB1D282349C88200CE17D4 /* SplashScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SplashScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				349D5B122338C0CE00065C1B /* PlayScene.swift */,
+				34DB1D24234997C200CE17D4 /* SplashScene.swift */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 				349D5B412338CF7500065C1B /* GameObjects */,
 				349D5B0C2338C0CE00065C1B /* AppDelegate.swift */,
 				349D5B0E2338C0CE00065C1B /* PlayScene.sks */,
+				34DB1D282349C88200CE17D4 /* SplashScene.sks */,
 				349D5B102338C0CE00065C1B /* Actions.sks */,
 				349D5B162338C0CE00065C1B /* Main.storyboard */,
 				349D5B192338C0CF00065C1B /* Assets.xcassets */,
@@ -180,6 +188,7 @@
 				34227F52233EFB490053E91F /* Spider.swift */,
 				34227F57233F806B0053E91F /* Log.swift */,
 				343C218F23408ED100B372F0 /* Coin.swift */,
+				34DB1D262349A2B800CE17D4 /* PlayButton.swift */,
 			);
 			path = GameObjects;
 			sourceTree = "<group>";
@@ -289,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34DB1D292349C88200CE17D4 /* SplashScene.sks in Resources */,
 				349D5B182338C0CE00065C1B /* Main.storyboard in Resources */,
 				349D5B0F2338C0CE00065C1B /* PlayScene.sks in Resources */,
 				349D5B1A2338C0CF00065C1B /* Assets.xcassets in Resources */,
@@ -319,9 +329,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				343C219023408ED100B372F0 /* Coin.swift in Sources */,
+				34DB1D25234997C200CE17D4 /* SplashScene.swift in Sources */,
 				349D5B132338C0CE00065C1B /* PlayScene.swift in Sources */,
 				349D5B432338D14F00065C1B /* Cow.swift in Sources */,
 				34227F56233F49930053E91F /* Extension.swift in Sources */,
+				34DB1D272349A2B800CE17D4 /* PlayButton.swift in Sources */,
 				34227F53233EFB490053E91F /* Spider.swift in Sources */,
 				349D5B152338C0CE00065C1B /* PlayViewController.swift in Sources */,
 				349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */,
