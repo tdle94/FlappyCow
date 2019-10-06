@@ -136,7 +136,7 @@ class PlayScene: SKScene {
         }
   
         // remove coin if out of frame
-        if coin.position.x <= -frame.width/2 || coin.position.y >= frame.height/2 {
+        if coin.position.x <= -frame.width/2 || coin.position.y >= frame.maxY + frame.size.height/2 {
             coin.removeFromParent()
             coin = Coin(position: CGPoint(x: Random.coinX, y: frame.height/2))
             addChild(coin)
