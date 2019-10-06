@@ -16,9 +16,6 @@ class Background: SKSpriteNode {
         let image = UIImage(named: "background")!
         texture = SKTexture(image: image)
         run(SKAction.repeatForever(SKAction.moveBy(x: -5, y: 0, duration: 0.07)))
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            position.y = 150
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
