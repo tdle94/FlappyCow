@@ -11,8 +11,8 @@ import SpriteKit
 
 class PlayButton: SKSpriteNode {
     var playButtonTexture: SKTexture {
-        let image = UIImage(named: "play_button")!
-        return SKTexture(image: image)
+        let textureAtlas = SKTextureAtlas(named: "Buttons")
+        return textureAtlas.textureNamed("play_button")
     }
 
     init() {
