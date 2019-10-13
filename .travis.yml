@@ -1,7 +1,5 @@
 language: swift
-os: osx
 osx_image: xcode11.1
 xcode_project: FlutterCow/FlutterCow.xcodeproj
 xcode_scheme: FlutterCow
-xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 8 Plus
-
+xcode_sdk: iphonesimulator9.2
