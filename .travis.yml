@@ -3,4 +3,7 @@ os: osx
 osx_image: xcode11.1
 xcode_scheme: FlutterCow
 xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 8 Plus
+install:
+ - gem uninstall bundler
+ - gem install bundler --version '1.7.4'
 
