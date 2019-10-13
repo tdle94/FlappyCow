@@ -2,4 +2,4 @@ language: swift
 osx_image: xcode11.1
 xcode_project: FlutterCow/FlutterCow.xcodeproj
 xcode_scheme: FlutterCow
-xcode_sdk: iphonesimulator9.2
+xcode_sdk: iphonesimulator8
