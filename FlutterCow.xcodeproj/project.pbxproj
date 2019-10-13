@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3404D935235347A30044D28C /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404D934235347A30044D28C /* ScoreLabel.swift */; };
 		34227F53233EFB490053E91F /* Spider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F52233EFB490053E91F /* Spider.swift */; };
 		34227F56233F49930053E91F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F55233F49930053E91F /* Extension.swift */; };
 		34227F58233F806B0053E91F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F57233F806B0053E91F /* Log.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3404D934235347A30044D28C /* ScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		34227F52233EFB490053E91F /* Spider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spider.swift; sourceTree = "<group>"; };
 		34227F55233F49930053E91F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		34227F57233F806B0053E91F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				34227F57233F806B0053E91F /* Log.swift */,
 				343C218F23408ED100B372F0 /* Coin.swift */,
 				34DB1D262349A2B800CE17D4 /* PlayButton.swift */,
+				3404D934235347A30044D28C /* ScoreLabel.swift */,
 			);
 			path = GameObjects;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				34227F56233F49930053E91F /* Extension.swift in Sources */,
 				34DB1D272349A2B800CE17D4 /* PlayButton.swift in Sources */,
 				34227F53233EFB490053E91F /* Spider.swift in Sources */,
+				3404D935235347A30044D28C /* ScoreLabel.swift in Sources */,
 				349D5B152338C0CE00065C1B /* PlayViewController.swift in Sources */,
 				349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */,
 				34227F58233F806B0053E91F /* Log.swift in Sources */,

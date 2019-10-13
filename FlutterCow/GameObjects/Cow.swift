@@ -11,6 +11,8 @@ import SpriteKit
 
 class Cow: SKSpriteNode {
     
+    var numberOfCoinAte: Int = 0
+    
     var isDead: Bool = false {
         didSet {
             if isDead {

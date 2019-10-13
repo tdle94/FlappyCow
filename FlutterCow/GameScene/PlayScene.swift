@@ -31,6 +31,8 @@ struct Random {
 }
 
 class PlayScene: SKScene {
+    // MARK: - Game Objects
+
     var cow: Cow = Cow()
 
     var spider0: Spider!
@@ -46,11 +48,16 @@ class PlayScene: SKScene {
     var log: Log!
     
     var coin: Coin!
+    
+    var scoreLabel: ScoreLabel!
 
     var newBackgroundNeeded: Bool = true
 
+    // MARK: - Override funcs
+
     override func didMove(to view: SKView) {
         super.didMove(to: view)
+        scoreLabel = ScoreLabel(text: "0", position: CGPoint(x: -frame.size.width/2 + 50, y: frame.size.height/2 - 50))
         coin = Coin(position: CGPoint(x: Random.coinX, y: frame.height/2))
         log = Log(position: CGPoint(x: Random.logX, y: -Random.logY), randomHeight: Random.logHeight)
         spider0 = Spider(position: CGPoint(x: Random.spiderX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -Random.spiderY))
@@ -64,6 +71,7 @@ class PlayScene: SKScene {
         addChild(spider3)
         addChild(log)
         addChild((coin))
+        addChild(scoreLabel)
         backgrounds.append(Background(size: frame.size))
         addChild(backgrounds.first!)
     }
@@ -118,6 +126,8 @@ class PlayScene: SKScene {
                     }
                     isUserInteractionEnabled = false
                 } else {    // coin collision
+                    cow.numberOfCoinAte += 1
+                    scoreLabel.text = "\(cow.numberOfCoinAte)"
                     coin.removeFromParent()
                     coin = Coin(position: CGPoint(x: Random.coinX, y: frame.height/2))
                     addChild(coin)
@@ -171,6 +181,8 @@ class PlayScene: SKScene {
         }
     }
     
+    // MARK: Custom funcs
+
     func deAlloc() {
         for children in children {
             children.removeAllActions()
