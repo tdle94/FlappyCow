@@ -28,7 +28,7 @@ class Log: SKSpriteNode {
 
         physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width, height: randomHeight + 80), center: CGPoint(x: 50, y: 0))
         physicsBody?.affectedByGravity = false
-        physicsBody?.mass = 1000
+        physicsBody?.mass = 5000
         physicsBody?.friction = 10
         physicsBody?.isDynamic = true
         physicsBody?.contactTestBitMask = 0

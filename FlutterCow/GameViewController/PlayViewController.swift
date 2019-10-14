@@ -51,12 +51,14 @@ class PlayViewController: UIViewController {
     @objc func startGame() {
         guard let view = self.view as? SKView, let scene = SKScene(fileNamed: "PlayScene") else { return }
         scene.scaleMode = .fill
+        view.scene?.removeFromParent()
         view.presentScene(scene, transition: SKTransition.doorsCloseHorizontal(withDuration: 1))
     }
     
     @objc func gameOver() {
         guard let view = self.view as? SKView, let scene = SKScene(fileNamed: "SplashScene") else { return }
         scene.scaleMode = .fill
+        view.scene?.removeFromParent()
         view.presentScene(scene, transition: SKTransition.doorsCloseHorizontal(withDuration: 1))
     }
 }
