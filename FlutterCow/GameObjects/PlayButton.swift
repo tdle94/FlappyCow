@@ -10,14 +10,9 @@ import Foundation
 import SpriteKit
 
 class PlayButton: SKSpriteNode {
-    var playButtonTexture: SKTexture {
-        let textureAtlas = SKTextureAtlas(named: "Buttons")
-        return textureAtlas.textureNamed("play_button")
-    }
-
     init() {
-        super.init(texture: nil, color: .white, size: .zero)
-        texture = playButtonTexture
+        let textureAtlas = SKTextureAtlas(named: "Buttons")
+        super.init(texture: textureAtlas.textureNamed("play_button"), color: .white, size: .zero)
         size = texture?.size() ?? .zero
         position = .zero
         isUserInteractionEnabled = true
