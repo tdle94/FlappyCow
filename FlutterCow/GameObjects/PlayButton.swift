@@ -15,6 +15,7 @@ class PlayButton: SKSpriteNode {
         super.init(texture: textureAtlas.textureNamed("play_button"), color: .white, size: .zero)
         size = texture?.size() ?? .zero
         position = .zero
+        zPosition = 2
         isUserInteractionEnabled = true
     }
     
