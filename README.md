@@ -2,9 +2,13 @@
 
 ## Introduction
 
-Flappy is an iOS action game developed with Apple's native game engine SpriteKit and available free on the App Store. 
+Flappy Cow is an iOS action game developed with Apple's native game engine SpriteKit. 
 
 All sprites credited to https://github.com/cubei/FlappyCow. Which is an Android version of Flappy Cow
+
+## Why another clone game
+
+I wanted to explore Spritekit and its feature. That is why I decided to create a variation of Flappy Bird game.
 
 ## How to play
 Similar to Flappy Bird. Keep tapping the screen to increase altitude and avoid scary spider and random log.
