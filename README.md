@@ -8,7 +8,7 @@ All sprites credited to https://github.com/cubei/FlappyCow. Which is an Android 
 
 ## Demo
 
-![ezgif com-video-to-gif (3)](https://user-images.githubusercontent.com/13130384/66836059-9dec7700-ef9b-11e9-9256-fb591b1a8eec.gif)
+![ezgif com-resize](https://user-images.githubusercontent.com/13130384/66837744-74811a80-ef9e-11e9-97e0-6bdd16e69923.gif)
 
 ## Why another clone game
 
