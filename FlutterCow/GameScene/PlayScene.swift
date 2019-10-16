@@ -24,7 +24,7 @@ class PlayScene: SKScene {
   
     var timer: Timer = Timer()
   
-    var maximumObstacles: Int = 3
+    var maximumObstacles: Int = 2
   
     var numberOfTimeObstacleSpawn = 1
 
@@ -85,7 +85,7 @@ class PlayScene: SKScene {
     }
   
     private func spawnSpiderAndLog() {
-      guard numberOfTimeObstacleSpawn <= maximumObstacles else {
+      guard numberOfTimeObstacleSpawn < maximumObstacles else {
         return
       }
       let randomLogX = Random.logX
