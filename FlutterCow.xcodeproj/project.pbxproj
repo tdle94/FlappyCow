@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331FB62E2356EF7F00E35979 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331FB62D2356EF7F00E35979 /* Timer.swift */; };
 		3404D935235347A30044D28C /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404D934235347A30044D28C /* ScoreLabel.swift */; };
 		34227F53233EFB490053E91F /* Spider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F52233EFB490053E91F /* Spider.swift */; };
 		34227F56233F49930053E91F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F55233F49930053E91F /* Extension.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		331FB62D2356EF7F00E35979 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		3404D934235347A30044D28C /* ScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		34227F52233EFB490053E91F /* Spider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spider.swift; sourceTree = "<group>"; };
 		34227F55233F49930053E91F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331FB62C2356EF6200E35979 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				331FB62D2356EF7F00E35979 /* Timer.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		3332751C233DFC3A00982A89 /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 		349D5B0B2338C0CE00065C1B /* FlutterCow */ = {
 			isa = PBXGroup;
 			children = (
+				331FB62C2356EF6200E35979 /* Util */,
 				34227F54233F497B0053E91F /* Extension */,
 				3332751D233DFC6500982A89 /* GameViewController */,
 				3332751C233DFC3A00982A89 /* GameScene */,
@@ -335,6 +346,7 @@
 				34DB1D25234997C200CE17D4 /* SplashScene.swift in Sources */,
 				349D5B132338C0CE00065C1B /* PlayScene.swift in Sources */,
 				349D5B432338D14F00065C1B /* Cow.swift in Sources */,
+				331FB62E2356EF7F00E35979 /* Timer.swift in Sources */,
 				34227F56233F49930053E91F /* Extension.swift in Sources */,
 				34DB1D272349A2B800CE17D4 /* PlayButton.swift in Sources */,
 				34227F53233EFB490053E91F /* Spider.swift in Sources */,
