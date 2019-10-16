@@ -23,6 +23,10 @@ class PlayScene: SKScene {
     var newBackgroundNeeded: Bool = true
   
     var timer: Timer = Timer()
+  
+    var maximumObstacles: Int = 3
+  
+    var numberOfTimeObstacleSpawn = 1
 
     // MARK: - Override funcs
 
@@ -69,28 +73,29 @@ class PlayScene: SKScene {
     }
   
   private func handleLogAndSpider() {
-        // remove if out of frame
+        // remove if out of frame. Because log and spider has approximately the same x position. Only check for log
         for node in children {
           if let log = node as? Log {
               if log.position.x <= -frame.width/2 {
                   log.removeFromParent()
-              }
-          } else if let spider = node as? Spider {
-              if spider.position.x <= -frame.width/2 {
-                  spider.removeFromParent()
-                  spider.web.removeFromParent()
+                  numberOfTimeObstacleSpawn -= 1
               }
           }
         }
     }
   
     private func spawnSpiderAndLog() {
+      guard numberOfTimeObstacleSpawn <= maximumObstacles else {
+        return
+      }
       let randomLogX = Random.logX
       let randomLogY = Random.logY
       let log = Log(position: CGPoint(x: randomLogX, y: -randomLogY), randomHeight: Random.logHeight)
       let spider = Spider(position: CGPoint(x: randomLogX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -randomLogY))
       addChild(log)
       addChild(spider)
+      
+      numberOfTimeObstacleSpawn += 1
     }
 
   
@@ -177,18 +182,23 @@ extension PlayScene {
       static var spiderX: CGFloat {
           return CGFloat.random(in: -bounds.width/3...bounds.maxX + bounds.width/2)
       }
+
       static var spiderY: CGFloat {
           return CGFloat.random(in: 0...bounds.maxY)
       }
+
       static var logX: CGFloat {
         return CGFloat.random(in: -bounds.width/2...bounds.maxX)
       }
+
       static var logY: CGFloat {
           return CGFloat.random(in: bounds.midY...bounds.maxY)
       }
+
       static var coinX: CGFloat {
           return CGFloat.random(in: -bounds.width/2...0)
       }
+
       static var logHeight: CGFloat = bounds.height
   }
 }
