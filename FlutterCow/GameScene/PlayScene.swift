@@ -201,14 +201,6 @@ extension PlayScene {
   enum Random {
       private static var bounds = UIScreen.main.bounds
 
-      static var spiderX: CGFloat {
-          return CGFloat.random(in: -bounds.width/3...bounds.maxX + bounds.width/2)
-      }
-
-      static var spiderY: CGFloat {
-          return CGFloat.random(in: 0...bounds.maxY)
-      }
-
       static var logX: CGFloat {
         return CGFloat.random(in: -bounds.width/2...bounds.maxX)
       }
