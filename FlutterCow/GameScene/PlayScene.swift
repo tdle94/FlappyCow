@@ -27,6 +27,8 @@ class PlayScene: SKScene {
     var maximumObstacles: Int = 2
   
     var numberOfTimeObstacleSpawn = 1
+  
+    var logObstaclePostion: [CGPoint] = []
 
     // MARK: - Override funcs
 
@@ -47,6 +49,8 @@ class PlayScene: SKScene {
         addChild(scoreLabel)
         backgrounds.append(Background(size: frame.size))
         addChild(backgrounds.first!)
+      
+        logObstaclePostion.append(log.position)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -88,14 +92,32 @@ class PlayScene: SKScene {
       guard numberOfTimeObstacleSpawn < maximumObstacles else {
         return
       }
-      let randomLogX = Random.logX
-      let randomLogY = Random.logY
-      let log = Log(position: CGPoint(x: randomLogX, y: -randomLogY), randomHeight: Random.logHeight)
-      let spider = Spider(position: CGPoint(x: randomLogX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -randomLogY))
-      addChild(log)
-      addChild(spider)
       
-      numberOfTimeObstacleSpawn += 1
+      // if new log obstacle overlap the old one. Continue to look for new position
+      while true {
+          var isLogOverlapped: Bool = false
+          let randomLogX = Random.logX
+          let randomLogY = Random.logY
+          let log = Log(position: CGPoint(x: randomLogX, y: -randomLogY), randomHeight: Random.logHeight)
+          let spider = Spider(position: CGPoint(x: randomLogX, y: frame.maxY), randomDrop: CGPoint(x: 0, y: -randomLogY))
+        
+          for previousLogPosition in logObstaclePostion {
+            if log.contains(previousLogPosition) {
+              isLogOverlapped = true
+              break
+            }
+          }
+        
+          if !isLogOverlapped {
+            addChild(log)
+            addChild(spider)
+            
+            logObstaclePostion.append(log.position)
+            numberOfTimeObstacleSpawn += 1
+            
+            break
+          }
+      }
     }
 
   
