@@ -110,6 +110,8 @@ class PlayScene: SKScene {
                     || log.frame.intersects(currentLog.frame)
                     || currentLog.frame.intersects(log.frame)
                     || currentLog.frame.contains(log.frame)
+                    || (log.frame.maxX >= currentLog.frame.minX && log.frame.maxX <= currentLog.frame.maxX)
+                    || (log.frame.minX >= currentLog.frame.minX && log.frame.minX <= currentLog.frame.maxX)
                 {
                     isLogOverlapped = true
                     break
