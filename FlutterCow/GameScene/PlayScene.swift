@@ -211,7 +211,7 @@ extension PlayScene {
       private static var bounds = UIScreen.main.bounds
 
       static var logX: CGFloat {
-        return CGFloat.random(in: -bounds.width/2...bounds.maxX + bounds.width/2)
+        return CGFloat.random(in: -bounds.width/2...bounds.maxX)
       }
 
       static var logY: CGFloat {
