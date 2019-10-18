@@ -15,7 +15,7 @@ class HighScoreLabel: SKLabelNode {
             guard let newHighScore = newValue else {
                 return
             }
-            if score == nil || newHighScore > score ?? 0 {
+            if (score == nil && newHighScore != 0) || newHighScore > score ?? 0 {
                 UserDefaults.standard.set(newHighScore, forKey: "HighestScore")
                 UserDefaults.standard.synchronize()
             }
