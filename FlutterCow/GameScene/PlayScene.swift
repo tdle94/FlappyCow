@@ -57,12 +57,15 @@ class PlayScene: SKScene {
 
     override func update(_ currentTime: TimeInterval) {
         timer.updateTimer(currentTime: currentTime)
-        handleCow()
-        
         if !cow.isDead {
+            handleCow()
             moveBackgroundIndefinitely()
             handleCoin()
             handleLogAndSpider()
+        } else {
+            if Int(timer.previousUpdateTime) % 5 == 0 {
+                NotificationCenter.default.post(name: NSNotification.Name("game over"), object: nil)
+            }
         }
     }
 
@@ -90,14 +93,11 @@ class PlayScene: SKScene {
     }
   
     private func spawnSpiderAndLog() {
-      guard numberOfTimeObstacleSpawn < maximumObstacles else {
-        return
-      }
+        guard numberOfTimeObstacleSpawn < maximumObstacles else {
+            return
+        }
 
-      // if new log obstacle overlap the old one. Continue to look for new position
-      while true {
-        
-        var isLogOverlapped: Bool = false
+        // if new log obstacle overlap the old one. Continue to look for new position
         let randomLogX = Random.logX
         let randomLogY = Random.logY
         let log = Log(position: CGPoint(x: randomLogX, y: -randomLogY), randomHeight: Random.logHeight)
@@ -106,27 +106,21 @@ class PlayScene: SKScene {
             
         for node in children {
             if let currentLog = node as? Log {
-                if log.frame.contains(currentLog.frame)
-                    || log.frame.intersects(currentLog.frame)
-                    || currentLog.frame.intersects(log.frame)
-                    || currentLog.frame.contains(log.frame)
-                    || (log.frame.maxX >= currentLog.frame.minX && log.frame.maxX <= currentLog.frame.maxX)
-                    || (log.frame.minX >= currentLog.frame.minX && log.frame.minX <= currentLog.frame.maxX)
-                {
-                    isLogOverlapped = true
+                if (log.frame.maxX >= currentLog.frame.minX && log.frame.maxX <= currentLog.frame.maxX) {
+                    log.position.x -= log.frame.maxX - currentLog.frame.minX
+                    spider.position.x -= log.frame.maxX - currentLog.frame.minX
+                    break
+                } else if (log.frame.minX >= currentLog.frame.minX && log.frame.minX <= currentLog.frame.maxX) {
+                    log.position.x += currentLog.frame.maxX - log.frame.minX
+                    spider.position.x += currentLog.frame.maxX - log.frame.minX
                     break
                 }
             }
         }
-
-        if !isLogOverlapped {
-            addChild(log)
-            addChild(spider)
-            numberOfTimeObstacleSpawn += 1
-            
-            break
-        }
-      }
+        
+        addChild(log)
+        addChild(spider)
+        numberOfTimeObstacleSpawn += 1
     }
 
   
