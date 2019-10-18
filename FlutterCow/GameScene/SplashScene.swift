@@ -20,5 +20,6 @@ class SplashScene: SKScene {
         super.didMove(to: view)
         addChild(background)
         addChild(PlayButton())
+        addChild(HighScoreLabel())
     }
 }

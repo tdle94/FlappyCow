@@ -14,6 +14,7 @@
 		34227F58233F806B0053E91F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34227F57233F806B0053E91F /* Log.swift */; };
 		343C219023408ED100B372F0 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343C218F23408ED100B372F0 /* Coin.swift */; };
 		34457CFD233CEFC1008CEBF9 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34457CFC233CEFC1008CEBF9 /* Background.swift */; };
+		344F100C2359E40F00CEB7BD /* HighScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344F100B2359E40F00CEB7BD /* HighScoreLabel.swift */; };
 		349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D5B0C2338C0CE00065C1B /* AppDelegate.swift */; };
 		349D5B0F2338C0CE00065C1B /* PlayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B0E2338C0CE00065C1B /* PlayScene.sks */; };
 		349D5B112338C0CE00065C1B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349D5B102338C0CE00065C1B /* Actions.sks */; };
@@ -55,6 +56,7 @@
 		34227F57233F806B0053E91F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		343C218F23408ED100B372F0 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		34457CFC233CEFC1008CEBF9 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		344F100B2359E40F00CEB7BD /* HighScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreLabel.swift; sourceTree = "<group>"; };
 		349D5B092338C0CE00065C1B /* FlutterCow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlutterCow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		349D5B0C2338C0CE00065C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		349D5B0E2338C0CE00065C1B /* PlayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlayScene.sks; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				343C218F23408ED100B372F0 /* Coin.swift */,
 				34DB1D262349A2B800CE17D4 /* PlayButton.swift */,
 				3404D934235347A30044D28C /* ScoreLabel.swift */,
+				344F100B2359E40F00CEB7BD /* HighScoreLabel.swift */,
 			);
 			path = GameObjects;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				34227F56233F49930053E91F /* Extension.swift in Sources */,
 				34DB1D272349A2B800CE17D4 /* PlayButton.swift in Sources */,
 				34227F53233EFB490053E91F /* Spider.swift in Sources */,
+				344F100C2359E40F00CEB7BD /* HighScoreLabel.swift in Sources */,
 				3404D935235347A30044D28C /* ScoreLabel.swift in Sources */,
 				349D5B152338C0CE00065C1B /* PlayViewController.swift in Sources */,
 				349D5B0D2338C0CE00065C1B /* AppDelegate.swift in Sources */,
@@ -528,7 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = DTUTGY3V82;
 				INFOPLIST_FILE = FlutterCow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -547,7 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = DTUTGY3V82;
 				INFOPLIST_FILE = FlutterCow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

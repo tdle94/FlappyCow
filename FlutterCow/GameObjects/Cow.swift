@@ -16,6 +16,7 @@ class Cow: SKSpriteNode {
     var isDead: Bool = false {
         didSet {
             if isDead {
+                HighScoreLabel.score = numberOfCoinAte
                 die()
             }
         }
